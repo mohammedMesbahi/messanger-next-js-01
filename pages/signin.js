@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
+import { useRouter } from 'next/router'
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -29,14 +30,15 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const router = useRouter()
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    axios.post('/api/signin',{
+    axios.post('/api/auth/signin',{
       email: data.get('email'),
       password: data.get('password')
     }).then(function (response) {
-      console.log(response)
+      router.push('/chat');
     })
   .catch(function(error) {
     console.log(error.message);
@@ -75,6 +77,7 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              defaultValue="maliki.ed@outlook.com"
             />
             <TextField
               margin="normal"
@@ -85,6 +88,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              defaultValue="12345678a9"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -99,13 +103,13 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
+              {/* <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
-              </Grid>
+              </Grid> */}
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

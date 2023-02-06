@@ -6,6 +6,7 @@ exports.validateSignup = (req, res, next) => {
   req.sanitizeBody("name");
   req.sanitizeBody("email");
   req.sanitizeBody("password");
+  req.sanitizeBody("rPassword");
 
   // Name is non-null and is 4 to 10 characters
   req.checkBody("name", "Enter a name").notEmpty();
@@ -24,6 +25,8 @@ exports.validateSignup = (req, res, next) => {
   req
     .checkBody("password", "Password must be between 4 and 10 characters")
     .isLength({ min: 4, max: 10 });
+
+  req.assert('password', 'Passwords do not match').equals(req.body.rPassword);
 
   const errors = req.validationErrors();
   if (errors) {
@@ -65,8 +68,13 @@ exports.signin = (req, res, next) => {
 
 exports.signout = (req, res) => {
   res.clearCookie("next-connect.sid");
-  req.logout();
-  res.json({ message: "You are now signed out!" });
+  req.logout((err) => {
+    if (err) {
+      return res.status(500).json(err.message);
+    }
+    res.redirect("/signin");
+
+  });
 };
 
 exports.checkAuth = (req, res, next) => {
