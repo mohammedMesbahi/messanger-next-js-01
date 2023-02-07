@@ -22,7 +22,7 @@ const options ={
     keylen:56,
     // unlockInterval:5000
     maxAttempts:3,
-    selectFields:['name','email']
+    selectFields:['name','email','following']
 }
 userSchema.plugin(passportLocalMongoose, options);
 userSchema.plugin(mongodbErrorHandler);
