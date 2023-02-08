@@ -1,16 +1,19 @@
 import styles from "../styles/chat.module.css"
-export default function DirecChatsProvider({chats}) {
+export default function DirectChats({ chats }) {
     return (
         <div className={styles.directChats}>
             {
                 chats.map(user => {
-                    <div className={styles.directChat} key={user.id}>
-                        <img src={user.profileUrl} />
-                        <div className="info">
-                            <div className={styles.name}>{user.name}</div>
-                            <div className={styles.lastMessage}>{user.custom.title}</div>
+                    return (
+                        <div className={styles.directChat} key={user.id}>
+                            <img src={user.profileUrl} />
+                            <div className={styles.info}>
+                                <div className={styles.name}>{user.name}</div>
+                                <div className={styles.lastMessage}>{user.eTag}</div>
+                            </div>
                         </div>
-                    </div>
+                    )
+
                 })
             }
         </div>

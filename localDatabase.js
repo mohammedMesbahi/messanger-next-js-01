@@ -8,8 +8,9 @@
 */
 export const messages = [
     {
-        "author": "user_63ea15931d8541a3bd35e5b1f09087dc",
-        "body": "Hi, I'm Mark Kelley. I'm a software engineer. I'm currently looking for a new opportunity to learn new technologies. I'm currently looking for a new opportunity to learn new technologies.",
+        "author": "amine",
+        "body": "message 1",
+        "profileUrl": "https://randomuser.me/api/portraits/men/1.jpg",
         "createdAt": "2021-09-14T16:00:00.000Z",
         "id": "9jnerlff23u8ed01np9g6ysbhsh0dvcs",
         "isRead": false,
@@ -18,25 +19,17 @@ export const messages = [
         "updatedAt": "2021-09-14T16:00:00.000Z"
     },
     {
-        "author": "user_63ea15931d8541a3bd35e5b1f09087dc",
-        "body": "Hi, I'm Mark Kelley. I'm a software engineer. I'm currently looking for a new opportunity to learn new technologies. I'm currently looking for a new opportunity to learn new technologies.",
+        "author": "amine",
+        "body": "message 2",
+        "profileUrl": "https://randomuser.me/api/portraits/men/1.jpg",
         "createdAt": "2021-09-14T16:00:00.000Z",
-        "id": "9jnerlff23u8ed01np9g6ysbhsh0dvcs",
+        "id": "9jnerlff23u8ed0Snp9g6ysbhsh0dvcs",
         "isRead": false,
         "isStarred": false,
         "isSystemMessage": false,
         "updatedAt": "2021-09-14T16:00:00.000Z"
     },
-    {
-        "author": "user_63ea15931d8541a3bd35e5b1f09087dc",
-        "body": "Hi, I'm Mark Kelley. I'm a software engineer. I'm currently looking for a new opportunity to learn new technologies. I'm currently looking for a new opportunity to learn new technologies.",
-        "createdAt": "2021-09-14T16:00:00.000Z",
-        "id": "9jnerlff23u8ed01np9g6ysbhsh0dvcs",
-        "isRead": false,
-        "isStarred": false,
-        "isSystemMessage": false,
-        "updatedAt": "2021-09-14T16:00:00.000Z"
-    }
+    
 ]
 export const presentMembers = [
     "user_3c4400761cba4b65b77b6cae55fc21eb",

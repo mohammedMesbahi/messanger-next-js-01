@@ -7,7 +7,7 @@ export default function Messages({ messages }) {
                     return (
                         <div className={styles.message} key={message.id}>
                             <div className={styles.messageContent}>
-                                <div className={styles.messageAuthor}>{message.author}</div>
+                                <img src={message.profileUrl}/>
                                 <div className={styles.messageText}>{message.body}</div>
                             </div>
                         </div>
